@@ -1,6 +1,6 @@
 # Repository Contributions, Participation, and Public Access
 
-**Who may Contribute?** Contributors to <a href="https://github.com/oasis-tcs/openc2-oc2ls/">this repository</a> are expected to be 
+**Who may Contribute?** Contributors to <a href="https://github.com/oasis-tcs/openc2-cn-apdev/">this repository</a> are expected to be 
 <a href="https://www.oasis-open.org/policies-guidelines/oasis-defined-terms-2017-05-26#dMember">Members</a> of the
 <a href="https://www.oasis-open.org/committees/openc2/">OASIS Open Command and Control (OpenC2) TC</a>, for any
 substantive contributions.  Anyone wishing to <a href="https://www.oasis-open.org/org/faq#committee-participation">participate</a>
