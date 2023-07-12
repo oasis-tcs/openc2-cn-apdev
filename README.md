@@ -54,7 +54,7 @@ and branching strategy can be found in our [Documentation
 Norms](https://github.com/oasis-tcs/openc2-tc-ops/blob/main/Documentation-Norms.md#433-configure-repository).
 
 
-###  :writing_hand: Contributions  :writing_hand:
+### Contributions
 
 As stated in this repository's
 [CONTRIBUTING](https://github.com/oasis-tcs/openc2-cn-apdev/blob/published/CONTRIBUTING.md)
@@ -69,7 +69,7 @@ Member. Public feedback is also accepted, subject to the terms of
 the [OASIS Feedback
 License](https://www.oasis-open.org/policies-guidelines/ipr#appendixa). 
 
-###  :scroll: Licensing  :scroll:
+### Licensing
 
 Please see the
 [LICENSE](https://github.com/oasis-tcs/openc2-cn-apdev/blob/published/LICENSE.md)
@@ -82,7 +82,7 @@ the repository
 [LICENSE](https://github.com/oasis-tcs/openc2-cn-apdev/blob/published/LICENSE.md). 
 
 
-### :envelope_with_arrow: Contact :envelope_with_arrow:
+### Contact
 
 Please send questions or comments about [OASIS TC GitHub
 repositories](https://www.oasis-open.org/resources/tcadmin/github-repositories-for-oasis-tc-members-chartered-work)
