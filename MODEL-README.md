@@ -1,7 +1,5 @@
 ## README
 
-_This file provides a template for creating a new README.md for an OpenC2 TC work product repository. The initial generic logo graphic should be replaced with one specific for the work product, and internal content should be edited to name, describe, and link to the proper information for the work product. GitHub links in the source should be edited to reference the repository for **this** work product._
-
 ![Work Product ReadMe Logo](images/cn-apdev-logo-header.png)
 
 ## ![oasis-avatar](https://avatars.githubusercontent.com/u/47402065?s=24&v=4) An OASIS [Work Product](https://www.oasis-open.org/policies-guidelines/oasis-defined-terms-2018-05-22/#dWorkProduct) Repository ![oasis-avatar](https://avatars.githubusercontent.com/u/47402065?s=24&v=4) 
@@ -16,9 +14,9 @@ licensing. For more details, see the
 [Contributions](#writinghand-contributions-writinghand) and
 [Licensing](#scroll-licensing-scroll) sections below. 
 
-## :blue_book: _OpenC2 TC Work Product Title_ :blue_book:
+## :blue_book: _OpenC2 Actuator Profile Development Process_ :blue_book:
 
-_Provide a 1-2 sentence summary of the work product contained in this repo._
+OpenC2 [Actuator Profiles (APs)](https://docs.oasis-open.org/openc2/oc2arch/v1.0/cs01/oc2arch-v1.0-cs01.html#1-introduction) specify the subset of the OpenC2 language relevant in the context of specific actuator functions. A profile refines the meaning of language elements used to perform the actuator function, and often defines additional elements that are relevant and/or unique to that function. This Committee Note describes the TC’s process for using the [JSON Abstract Data Notation (JADN)](https://docs.oasis-open.org/openc2/jadn/v1.0/cs01/jadn-v1.0-cs01.html) information modeling language in the development of APs, resulting in a rigorous schema for an AP properly integrated with the base OpenC2 language.
 
 ### :twisted_rightwards_arrows: Repository Organization :twisted_rightwards_arrows:
 
