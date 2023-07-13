@@ -49,10 +49,10 @@ OpenC2 [Actuator Profiles (APs)](https://docs.oasis-open.org/openc2/oc2arch/v1.0
 
 The maintainers for this repository are: 
 
-- David Lemire - david.lemire@hii-tsd.com, GitHub: dlemire60, HII
-- David Kemp - d.kemp@cyber.nsa.gov, GitHub: davaya, National Security Agency
-- Mike Rosa - mjrosa@cyber.nsa.gov, GitHub: mjrosa, National Security Agency
-- Duncan Sparrell - duncan@sfractal.com, GitHub: sparrell, sFractal Consulting
+- David Lemire - david.lemire@hii-tsd.com, GitHub: [dlemire60](https://github.com/dlemire60), HII
+- David Kemp - d.kemp@cyber.nsa.gov, GitHub: [davaya](https://github.com/davaya), National Security Agency
+- Mike Rosa - mjrosa@cyber.nsa.gov, GitHub: [mjrosa](https://github.com/mjrosa), National Security Agency
+- Duncan Sparrell - duncan@sfractal.com, GitHub: [sparrell](https://github.com/sparrell), sFractal Consulting
 
 ### :writing_hand: Contributions :writing_hand:
 <div>
