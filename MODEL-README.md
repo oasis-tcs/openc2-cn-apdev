@@ -16,7 +16,7 @@ licensing. For more details, see the
 
 ## :blue_book: _OpenC2 Actuator Profile Development Process_ :blue_book:
 
-OpenC2 [Actuator Profiles (APs)](https://docs.oasis-open.org/openc2/oc2arch/v1.0/cs01/oc2arch-v1.0-cs01.html#1-introduction) specify the subset of the OpenC2 language relevant in the context of specific actuator functions. A profile refines the meaning of language elements used to perform the actuator function, and often defines additional elements that are relevant and/or unique to that function. This Committee Note describes the TC’s process for using the [JSON Abstract Data Notation (JADN)](https://docs.oasis-open.org/openc2/jadn/v1.0/cs01/jadn-v1.0-cs01.html) information modeling language in the development of APs, resulting in a rigorous schema for an AP properly integrated with the base OpenC2 language.
+This repository supports developing a Committee Note describing the OpenC2's TC’s process for developing actuator profiles, including using the [JSON Abstract Data Notation (JADN)](https://docs.oasis-open.org/openc2/jadn/v1.0/cs01/jadn-v1.0-cs01.html) information modeling language to develop a rigorous AP schema.
 
 ### :twisted_rightwards_arrows: Repository Organization :twisted_rightwards_arrows:
 
@@ -43,7 +43,16 @@ Norms](https://github.com/oasis-tcs/openc2-tc-ops/blob/main/Documentation-Norms.
 
 ### :left_speech_bubble: Description :left_speech_bubble:
 
-_Provide a 1-2 paragraph summary of the work product contained in this repo._
+OpenC2 [Actuator Profiles (APs)](https://docs.oasis-open.org/openc2/oc2arch/v1.0/cs01/oc2arch-v1.0-cs01.html#1-introduction) specify the subset of the OpenC2 language relevant in the context of specific actuator functions. A profile refines the meaning of language elements used to perform the actuator function, and often defines additional elements that are relevant and/or unique to that function. This Committee Note describes the TC’s process for using the [JSON Abstract Data Notation (JADN)](https://docs.oasis-open.org/openc2/jadn/v1.0/cs01/jadn-v1.0-cs01.html) information modeling language in the development of APs, resulting in a rigorous schema for an AP properly integrated with the base OpenC2 language.
+
+### <a id="maintainers">Maintainers</a>
+
+The maintainers for this repository are: 
+
+- David Lemire - david.lemire@hii-tsd.com, GitHub: dlemire60, HII
+- David Kemp - d.kemp@cyber.nsa.gov, GitHub: davaya, National Security Agency
+- Mike Rosa - mjrosa@cyber.nsa.gov, GitHub: mjrosa, National Security Agency
+- Duncan Sparrell - duncan@sfractal.com, GitHub: sparrell, sFractal Consulting
 
 ### :writing_hand: Contributions :writing_hand:
 <div>
