@@ -82,7 +82,13 @@ _This document is non-normative in its entirety._
 
 ## 1.1 Purpose
 
-> briefly summarize the purpose of this CN
+This OASIS Committee Note (CN) describes a process for developing
+OpenC2 Actuator Profiles (APs), including the use of the JSON
+Abstract Data Notation (JADN) information modeling language in
+the development of APs. The process described here results in an
+AP design and specification that aligns to the relevent use cases
+and an associated rigorous JADN schema that binds the AP to the
+OpenC2 language.
 
 ## 1.2 Glossary
 
@@ -90,7 +96,63 @@ _This document is non-normative in its entirety._
 
 ### 1.2.1 Definitions of terms
 
+-   **Action**: The task or activity to be performed (e.g.,
+    'deny').
+
+-   **Actuator**: The Consumer that executes the Command.
+
+-   **Actuator Profile**: The document that defines a category of
+    operations performed by an Actuator (e.g., 'Stateless Packet
+    Filtering').
+
+-   **Argument**: A property of a Command that provides
+    additional information on how to perform the Command, such as
+    date/time, periodicity, duration, etc.
+
+-   **Command**: A Message defined by an Action-Target pair that
+    is sent from a Producer and received by a Consumer.
+
+-   **Consumer**: A managed device / application that receives
+    Commands. Note that a single device / application can have
+    both Consumer and Producer capabilities.
+
+-   **Information Modeling**: A process to understand and
+    document the essential information content relevant to a
+    system, application, or protocol exchange without regard to
+    how that information is represented in actual
+    implementations.
+
+-   **Message**: A content- and transport-independent set of
+    elements conveyed between Consumers and Producers.
+
+-   **Producer**: A manager application that sends Commands.
+
+-   **Request**: A Message from a Producer to a Consumer used to
+    convey a Command.
+
+-   **Response**: A Message from a Consumer to a Producer
+    acknowledging a Command or returning the requested resources
+    or status to a previously received Command.
+
+-   **Specifier**: A property or field that identifies a Target
+    to some level of precision.
+
+-   **Target**: The object of the Action, i.e., the Action is
+    performed on the Target (e.g., IP Address).
+
 ### 1.2.2 Acronyms and abbreviations
+
+| Acronym | Description |
+|:-------:|--------------|
+| AP      | Actuator Profile |
+| IM      | Information Modeling
+| JADN    | JSON Object Data Notation |
+| JSON    | JavaScript Object Notation |
+| LS      | Language Specification | 
+| OASIS   | Organization for the Advancement of Structured Information Standards |
+| OpenC2  | Open Command and Control |
+| TC      | Technical Committee |
+| UML     | Unified Modeling Language |
 
 ### 1.2.3 Document conventions
 
@@ -100,11 +162,82 @@ _This document is non-normative in its entirety._
 
 ## 1.3 Background
 
+This section provides background information on OpenC2, JADN, and
+the role of actuator profiles (APs) to provide a context for the
+process described in sections 2 and 3.
+
 ### 1.3.1 Open Command and Control (OpenC2)
+
+OpenC2 is a suite of specifications that enables command and
+control of cyber defense systems and components. OpenC2 typically
+uses a request-response paradigm where a _Command_ is encoded by
+a _Producer_ (managing application) and transferred to a
+_Consumer_ (managed device or virtualized function) using a
+secure transfer protocol, and the Consumer can respond with
+status and any requested information. This request / response
+paradigm is illustrated in Figure 1-1.
+
+##### Figure 1-1: OpenC2 Request / Response Paradigm
+![Figure 1-1: OpenC2 Request / Response
+Paradigm](images/MessageFlow.png)
+
+OpenC2 allows the application producing the commands to discover
+the set of capabilities supported by the managed devices (i.e.,
+an introspection capability). This capability permits the
+managing application to adjust its behavior to take advantage of
+the features exposed by the managed device. The capability
+definitions can be easily extended in a noncentralized manner,
+allowing standard and non-standard capabilities to be defined
+with semantic and syntactic rigor.
+
+> NOTE: add reference links to the following
+
+OpenC2's approach to automating cybersecurity command and control
+is described in the *OpenC2 Architecture Specification*. The
+specifics of the OpenC2 language are defined in the 
+*OpenC2 Language Specification*.
 
 ### 1.3.2 JSON Abstract Data Notation (JADN)
 
+JSON Abstract Data Notation (JADN) is a UML-based information
+modeling language that defines data structure independently of
+data format. Information models are used to define and generate
+physical data models, validate information instances, and enable
+lossless translation across data formats. A JADN specification
+consists of two parts: type definitions that comprise the
+information model, and serialization rules that define how
+information instances are represented as data. The information
+model is itself an information instance that can be serialized
+and transferred between applications. The model is documented
+using a compact and expressive interface definition language,
+property tables, or entity relationship diagrams, easing
+integration with existing design processes and architecture
+tools.
+
+> NOTE: add reference links to the following
+
+The OpenC2 TC has published a *JADN Ppecification*, and a
+companion CN describing the use of JADN in Information Modeling
+(IM).
+
 ### 1.3.3 OpenC2 Actuator Profiles
+
+As described in the *OpenC2 Architecture Specification*, APs
+serve the purpose of scoping the general purpose OpenC2 language
+to the C2 of a particular cyberdefense function:  
+
+> OpenC2 Actuator Profiles specify the subset of the OpenC2
+> language relevant in the context of specific actuator
+> functions. Cyber defense components, devices, systems and/or
+> instances may (in fact are likely to) implement multiple
+> profiles. A profile refines the meaning of language elements
+> (actions, targets, command arguments, results) used to perform
+> the actuator function, and often defines additional elements
+> that are relevant and/or unique to that function.
+
+The goal of this CN is to document a well-formed approach to
+developing APs that takes advantage of the rigor provided by
+applying JADN information modeling to the process.
 
 -------
 
