@@ -80,17 +80,9 @@ For complete copyright information please see the full Notices section in an App
 
 Introductory material.
 
-## 1.1 One way to produce OASIS-formatted HTML from Markdown
+## 1.1 Purpose
 
-Here is a customized command line which will generate HTML from this markdown file (named cn-appdev-v1.0-cn01.md):
-
-pandoc -f gfm -t html cn-appdev-v1.0-cn01.md -c https://docs.oasis-open.org/templates/css/markdown-styles-v1.8.1-cn.css --toc --toc-depth=5 -s -o cn-appdev-v1.0-cn01.html --metadata title="OpenC2 Actuator Profile Development Process Version 1.0"
-
-(.css file may also be referenced as styles/markdown-styles-v1.8.1-cn.css)
-
-We are currently using pandoc 3.0 from https://github.com/jgm/pandoc/releases/tag/3.0, but later versions may be used.
-
-Note this command generates a Table of Contents (TOC) in HTML which is located at the top of the HTML document, and which requires additional editing in order to be published in the expected OASIS style. This editing can be handled by OASIS staff during publication. Alternatively, the TC may generate a TOC via other tools or processes.
+> briefly summarize the purpose of this CN
 
 ## 1.2 Glossary
 
@@ -106,159 +98,87 @@ Note this command generates a Table of Contents (TOC) in HTML which is located a
 - Font colors and styles
 - Typographic conventions
 
-## 1.3 Some markdown usage examples
+## 1.3 Background
 
-**Text.**
+### 1.3.1 Open Command and Control (OpenC2)
 
-Note that text paragraphs in markdown should be separated by a blank line between them -
+### 1.3.2 JSON Abstract Data Notation (JADN)
 
-Otherwise the separate paragraphs will be joined together when the HTML is generated.
-Even if the text appears to be separate lines in the markdown source.
-
-To avoid having the usual vertical space between paragraphs,  
-append two or more space characters, or a space followed by backslash (\\), to the end of the lines  
-which will generate an HTML break tag instead of a new paragraph tag \
-(as demonstrated here).
-
-### 1.3.1 Figures and Captions
-
-FIGURE EXAMPLE:
-<note caption is best ABOVE figure, to allow a link to it to display image - same for table captions>
-
-###### Figure 1 -- Title of Figure
-![image-label should be meaningful](images/image_0.png) (this image is missing)
-
-###### Figure 2 -- OpenC2 Message Exchange
-![message exchange](images/image_1.png)
-
-
-### 1.3.2 Tables
-
-#### 1.3.2.1 Basic Table
-**Table 1-1. Table Label**
-
-| Item | Description |
-| :--- | :--- |
-| Item 1 | Something<br>(second line) |
-| Item 2 | Something |
-| Item 3 | Something<br>(second line) |
-| Item 4 | text |
-
-#### 1.3.2.2 Table with Three Columns and Some Bold Text
-text.
-
-| Title 1 | Title 2 | title 3 |
-| :--- | :--- | :--- |
-| something | something | something else that is a long string of text that **might** need to wrap around inside the table box and will just continue until the column divider is reached |
-| something | something | something |
-
-#### 1.3.2.3 Table with a caption which can be referenced
-
-###### Table 1-5. See reference label construction
-
-| Name | Description |
-| :--- | :--- |
-| **content** | Message body as specified by content_type and msg_type. |
-
-Here is a reference to the table caption:
-Please see [Table 1-5 or other meaningful label](#table-1-5-see-reference-label-construction) 
-
-
-### 1.3.3 Lists
-
-Bulleted list:
-* bullet item 1.
-* **Bold** bullet item 2.
-* bullet item 3.
-* bullet item 4.
-
-Indented or multi-level bullet list - add two spaces per level before bullet character (* or -):
-* main bullet type
-  * Example second bullet
-    * See third level
-      * fourth level
-
-Numbered list:
-1. item 1
-2. item 2
-3. item 3
-
-### 1.3.4 Reference Label Construction
-
-REFERENCES and ANCHORS
-- in markdown source, format the Reference tags as level 6 headings like: `###### [OpenC2-HTTPS-v1.0]`
-###### [OpenC2-HTTPS-v1.0]
-_Specification for Transfer of OpenC2 Messages via HTTPS Version 1.0_. Edited by...
-
-- reference text has to be on a separate line below the tag
-
-- format cross-references (citations of the references) like: `see [[OpenC2-HTTPS-v1.0](#openc2-https-v10)]`  
-"see [[OpenC2-HTTPS-v1.0](#openc2-https-v10)]"  
-(note the outer square brackets in markdown will appear in the visible HTML text)
-
-- The text in the Reference tag (following ###### ) will become an HTML anchor using the following conversion rules:
-  - punctuation marks will be dropped (including "[" )
-  - leading white spaces will be dropped
-  - upper case will be converted to lower
-  - spaces between letters will be converted to a single hyphen
-
-- The same HTML anchor construction rules apply to cross-references and to section headings.
-  - Thus, a section heading like "## 1.2 References"
-  - becomes an anchor in HTML like `<a href="#12-references">`
-  - referenced in the markdown like: see [Section 1.2](#12-references)
-  - (in markdown: `"see [Section 1.2](#12-references"`)
-  - similar HTML anchors are also used in constructing the TOC
-
-### 1.3.5 Code Blocks
-
-Text to appear as an indented code block with grey background and monospace font - use three back-ticks before and after the code block).
-
-Note the actual backticks will not appear in the HTML version. If it's necessary to display visible backticks, place a back-slash before them like: \``` .
-
-```
-{   
-    "target": {
-        "x_kmip_2.0": {
-            {"kmip_type": "json"},
-            {"operation": "RekeyKeyPair"},
-            {"name": "publicWebKey11DEC2017"}
-        }
-    }
-}
-```
-
-Text to be highlighted as code can also be surrounded by a single "backtick" character: 
-`code text`
-
-## 1.4 Page Breaks
-Add horizontal rule lines where page breaks are desired in the PDF - before each major section
-- insert the line rules in markdown by inserting 3 or more hyphens on a line by themselves:  ---
-- place these before each main section in markdown (usually "#" - which generates the HTML `<h1>` tag)
+### 1.3.3 OpenC2 Actuator Profiles
 
 -------
 
-# 2 Section Heading
-text.
+# 2 AP Development Process Overview
 
-## 2.1 Level 2 Heading
-text.
+> introductory words
 
-### 2.1.1 Level 3 Heading
-text.
+## 2.1 Process Steps
 
-#### 2.1.1.1 Level 4 Heading
-text.
+> Note: inital draft graphic, to be refined as document develops
 
-##### 2.1.1.1.1 Level 5 Heading
-This is the deepest level, because six # gets transformed into a Reference tag.
+##### **Figure 2-1:  Actuator Profile Development Process**
+![Figure 2-1: AP Development Process](images/CN-AP-Dev-Overview.drawio.png)
+
+ 1. AP Develompent Initiation
+ 1. Develop Use Cases
+ 1. Develop Example Messages
+ 1. Develop JADN Schema
+ 1. Link JADN Schema
+ 1. Create Property Tables
+ 1. Insert Property Tables
+ 1. Develop Specification Text
+ 1. Interate To Completion
+ 1. Develop Final Example Messages from JADN Schema
+ 1. Define Conformance Requirements
+ 1. Review, Approval, and Publication
 
 
-## 2.2 Next Heading
-text.
+## 2.2 AP Specification Structure
+
+ * Body
+   * sections
+ * Annex(es)
+ * Appendices
+ * Associated schema files
+
+-------
+
+# 3 AP Development Process Walkthrough
+
+## 3.1 AP Develompent Initiation
+
+## 3.2 Develop Use Cases
+
+## 3.3 Develop Example Messages
+
+## 3.4 Develop JADN Schema
+
+## 3.5 Link JADN Schema
+
+## 3.6 Create Property Tables
+
+## 3.7 Insert Property Tables
+
+## 3.8 Develop Specification Text
+
+## 3.9 Interate To Completion
+
+## 3.10 Develop Final Example Messages from JADN Schema
+
+## 3.11 Define Conformance Requirements
+
+## 3.12 Review, Approval, and Publication
+
 
 -------
 
 # Appendix A. Informative References
+
+ * OpenC2 Architecture
+ * OpenC2 Language Spec
+ * JADN Spec
+ * Information Modeling with JADN CN
+ * OASIS Work Product Process Documentation
 
 <!-- Required section -->
 
