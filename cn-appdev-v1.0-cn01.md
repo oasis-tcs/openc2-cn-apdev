@@ -78,7 +78,7 @@ For complete copyright information please see the full Notices section in an App
 
 # 1 Introduction
 
-Introductory material.
+_This document is non-normative in its entirety._
 
 ## 1.1 Purpose
 
