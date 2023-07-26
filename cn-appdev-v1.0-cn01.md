@@ -78,19 +78,17 @@ For complete copyright information please see the full Notices section in an App
 
 # 1 Introduction
 
-Introductory material.
+_This document is non-normative in its entirety._
 
-## 1.1 One way to produce OASIS-formatted HTML from Markdown
+## 1.1 Purpose
 
-Here is a customized command line which will generate HTML from this markdown file (named cn-appdev-v1.0-cn01.md):
-
-pandoc -f gfm -t html cn-appdev-v1.0-cn01.md -c https://docs.oasis-open.org/templates/css/markdown-styles-v1.8.1-cn.css --toc --toc-depth=5 -s -o cn-appdev-v1.0-cn01.html --metadata title="OpenC2 Actuator Profile Development Process Version 1.0"
-
-(.css file may also be referenced as styles/markdown-styles-v1.8.1-cn.css)
-
-We are currently using pandoc 3.0 from https://github.com/jgm/pandoc/releases/tag/3.0, but later versions may be used.
-
-Note this command generates a Table of Contents (TOC) in HTML which is located at the top of the HTML document, and which requires additional editing in order to be published in the expected OASIS style. This editing can be handled by OASIS staff during publication. Alternatively, the TC may generate a TOC via other tools or processes.
+This OASIS Committee Note (CN) describes a process for developing
+OpenC2 Actuator Profiles (APs), including the use of the JSON
+Abstract Data Notation (JADN) information modeling language in
+the development of APs. The process described here results in an
+AP design and specification that aligns to the relevent use cases
+and an associated rigorous JADN schema that binds the AP to the
+OpenC2 language.
 
 ## 1.2 Glossary
 
@@ -98,7 +96,63 @@ Note this command generates a Table of Contents (TOC) in HTML which is located a
 
 ### 1.2.1 Definitions of terms
 
+-   **Action**: The task or activity to be performed (e.g.,
+    'deny').
+
+-   **Actuator**: The Consumer that executes the Command.
+
+-   **Actuator Profile**: The document that defines a category of
+    operations performed by an Actuator (e.g., 'Stateless Packet
+    Filtering').
+
+-   **Argument**: A property of a Command that provides
+    additional information on how to perform the Command, such as
+    date/time, periodicity, duration, etc.
+
+-   **Command**: A Message defined by an Action-Target pair that
+    is sent from a Producer and received by a Consumer.
+
+-   **Consumer**: A managed device / application that receives
+    Commands. Note that a single device / application can have
+    both Consumer and Producer capabilities.
+
+-   **Information Modeling**: A process to understand and
+    document the essential information content relevant to a
+    system, application, or protocol exchange without regard to
+    how that information is represented in actual
+    implementations.
+
+-   **Message**: A content- and transport-independent set of
+    elements conveyed between Consumers and Producers.
+
+-   **Producer**: A manager application that sends Commands.
+
+-   **Request**: A Message from a Producer to a Consumer used to
+    convey a Command.
+
+-   **Response**: A Message from a Consumer to a Producer
+    acknowledging a Command or returning the requested resources
+    or status to a previously received Command.
+
+-   **Specifier**: A property or field that identifies a Target
+    to some level of precision.
+
+-   **Target**: The object of the Action, i.e., the Action is
+    performed on the Target (e.g., IP Address).
+
 ### 1.2.2 Acronyms and abbreviations
+
+| Acronym | Description |
+|:-------:|--------------|
+| AP      | Actuator Profile |
+| IM      | Information Modeling
+| JADN    | JSON Object Data Notation |
+| JSON    | JavaScript Object Notation |
+| LS      | Language Specification | 
+| OASIS   | Organization for the Advancement of Structured Information Standards |
+| OpenC2  | Open Command and Control |
+| TC      | Technical Committee |
+| UML     | Unified Modeling Language |
 
 ### 1.2.3 Document conventions
 
@@ -106,159 +160,158 @@ Note this command generates a Table of Contents (TOC) in HTML which is located a
 - Font colors and styles
 - Typographic conventions
 
-## 1.3 Some markdown usage examples
+## 1.3 Background
 
-**Text.**
+This section provides background information on OpenC2, JADN, and
+the role of actuator profiles (APs) to provide a context for the
+process described in sections 2 and 3.
 
-Note that text paragraphs in markdown should be separated by a blank line between them -
+### 1.3.1 Open Command and Control (OpenC2)
 
-Otherwise the separate paragraphs will be joined together when the HTML is generated.
-Even if the text appears to be separate lines in the markdown source.
+OpenC2 is a suite of specifications that enables command and
+control of cyber defense systems and components. OpenC2 typically
+uses a request-response paradigm where a _Command_ is encoded by
+a _Producer_ (managing application) and transferred to a
+_Consumer_ (managed device or virtualized function) using a
+secure transfer protocol, and the Consumer can respond with
+status and any requested information. This request / response
+paradigm is illustrated in Figure 1-1.
 
-To avoid having the usual vertical space between paragraphs,  
-append two or more space characters, or a space followed by backslash (\\), to the end of the lines  
-which will generate an HTML break tag instead of a new paragraph tag \
-(as demonstrated here).
+##### Figure 1-1: OpenC2 Request / Response Paradigm
+![Figure 1-1: OpenC2 Request / Response
+Paradigm](images/MessageFlow.png)
 
-### 1.3.1 Figures and Captions
+OpenC2 allows the application producing the commands to discover
+the set of capabilities supported by the managed devices (i.e.,
+an introspection capability). This capability permits the
+managing application to adjust its behavior to take advantage of
+the features exposed by the managed device. The capability
+definitions can be easily extended in a noncentralized manner,
+allowing standard and non-standard capabilities to be defined
+with semantic and syntactic rigor.
 
-FIGURE EXAMPLE:
-<note caption is best ABOVE figure, to allow a link to it to display image - same for table captions>
+> NOTE: add reference links to the following
 
-###### Figure 1 -- Title of Figure
-![image-label should be meaningful](images/image_0.png) (this image is missing)
+OpenC2's approach to automating cybersecurity command and control
+is described in the *OpenC2 Architecture Specification*. The
+specifics of the OpenC2 language are defined in the 
+*OpenC2 Language Specification*.
 
-###### Figure 2 -- OpenC2 Message Exchange
-![message exchange](images/image_1.png)
+### 1.3.2 JSON Abstract Data Notation (JADN)
 
+JSON Abstract Data Notation (JADN) is a UML-based information
+modeling language that defines data structure independently of
+data format. Information models are used to define and generate
+physical data models, validate information instances, and enable
+lossless translation across data formats. A JADN specification
+consists of two parts: type definitions that comprise the
+information model, and serialization rules that define how
+information instances are represented as data. The information
+model is itself an information instance that can be serialized
+and transferred between applications. The model is documented
+using a compact and expressive interface definition language,
+property tables, or entity relationship diagrams, easing
+integration with existing design processes and architecture
+tools.
 
-### 1.3.2 Tables
+> NOTE: add reference links to the following
 
-#### 1.3.2.1 Basic Table
-**Table 1-1. Table Label**
+The OpenC2 TC has published a *JADN Ppecification*, and a
+companion CN describing the use of JADN in Information Modeling
+(IM).
 
-| Item | Description |
-| :--- | :--- |
-| Item 1 | Something<br>(second line) |
-| Item 2 | Something |
-| Item 3 | Something<br>(second line) |
-| Item 4 | text |
+### 1.3.3 OpenC2 Actuator Profiles
 
-#### 1.3.2.2 Table with Three Columns and Some Bold Text
-text.
+As described in the *OpenC2 Architecture Specification*, APs
+serve the purpose of scoping the general purpose OpenC2 language
+to the C2 of a particular cyberdefense function:  
 
-| Title 1 | Title 2 | title 3 |
-| :--- | :--- | :--- |
-| something | something | something else that is a long string of text that **might** need to wrap around inside the table box and will just continue until the column divider is reached |
-| something | something | something |
+> OpenC2 Actuator Profiles specify the subset of the OpenC2
+> language relevant in the context of specific actuator
+> functions. Cyber defense components, devices, systems and/or
+> instances may (in fact are likely to) implement multiple
+> profiles. A profile refines the meaning of language elements
+> (actions, targets, command arguments, results) used to perform
+> the actuator function, and often defines additional elements
+> that are relevant and/or unique to that function.
 
-#### 1.3.2.3 Table with a caption which can be referenced
-
-###### Table 1-5. See reference label construction
-
-| Name | Description |
-| :--- | :--- |
-| **content** | Message body as specified by content_type and msg_type. |
-
-Here is a reference to the table caption:
-Please see [Table 1-5 or other meaningful label](#table-1-5-see-reference-label-construction) 
-
-
-### 1.3.3 Lists
-
-Bulleted list:
-* bullet item 1.
-* **Bold** bullet item 2.
-* bullet item 3.
-* bullet item 4.
-
-Indented or multi-level bullet list - add two spaces per level before bullet character (* or -):
-* main bullet type
-  * Example second bullet
-    * See third level
-      * fourth level
-
-Numbered list:
-1. item 1
-2. item 2
-3. item 3
-
-### 1.3.4 Reference Label Construction
-
-REFERENCES and ANCHORS
-- in markdown source, format the Reference tags as level 6 headings like: `###### [OpenC2-HTTPS-v1.0]`
-###### [OpenC2-HTTPS-v1.0]
-_Specification for Transfer of OpenC2 Messages via HTTPS Version 1.0_. Edited by...
-
-- reference text has to be on a separate line below the tag
-
-- format cross-references (citations of the references) like: `see [[OpenC2-HTTPS-v1.0](#openc2-https-v10)]`  
-"see [[OpenC2-HTTPS-v1.0](#openc2-https-v10)]"  
-(note the outer square brackets in markdown will appear in the visible HTML text)
-
-- The text in the Reference tag (following ###### ) will become an HTML anchor using the following conversion rules:
-  - punctuation marks will be dropped (including "[" )
-  - leading white spaces will be dropped
-  - upper case will be converted to lower
-  - spaces between letters will be converted to a single hyphen
-
-- The same HTML anchor construction rules apply to cross-references and to section headings.
-  - Thus, a section heading like "## 1.2 References"
-  - becomes an anchor in HTML like `<a href="#12-references">`
-  - referenced in the markdown like: see [Section 1.2](#12-references)
-  - (in markdown: `"see [Section 1.2](#12-references"`)
-  - similar HTML anchors are also used in constructing the TOC
-
-### 1.3.5 Code Blocks
-
-Text to appear as an indented code block with grey background and monospace font - use three back-ticks before and after the code block).
-
-Note the actual backticks will not appear in the HTML version. If it's necessary to display visible backticks, place a back-slash before them like: \``` .
-
-```
-{   
-    "target": {
-        "x_kmip_2.0": {
-            {"kmip_type": "json"},
-            {"operation": "RekeyKeyPair"},
-            {"name": "publicWebKey11DEC2017"}
-        }
-    }
-}
-```
-
-Text to be highlighted as code can also be surrounded by a single "backtick" character: 
-`code text`
-
-## 1.4 Page Breaks
-Add horizontal rule lines where page breaks are desired in the PDF - before each major section
-- insert the line rules in markdown by inserting 3 or more hyphens on a line by themselves:  ---
-- place these before each main section in markdown (usually "#" - which generates the HTML `<h1>` tag)
+The goal of this CN is to document a well-formed approach to
+developing APs that takes advantage of the rigor provided by
+applying JADN information modeling to the process.
 
 -------
 
-# 2 Section Heading
-text.
+# 2 AP Development Process Overview
 
-## 2.1 Level 2 Heading
-text.
+> introductory words
 
-### 2.1.1 Level 3 Heading
-text.
+## 2.1 Process Steps
 
-#### 2.1.1.1 Level 4 Heading
-text.
+> Note: inital draft graphic, to be refined as document develops
 
-##### 2.1.1.1.1 Level 5 Heading
-This is the deepest level, because six # gets transformed into a Reference tag.
+##### **Figure 2-1:  Actuator Profile Development Process**
+![Figure 2-1: AP Development Process](images/CN-AP-Dev-Overview.drawio.png)
+
+ 1. AP Develompent Initiation
+ 1. Develop Use Cases
+ 1. Develop Example Messages
+ 1. Develop JADN Schema
+ 1. Link JADN Schema
+ 1. Create Property Tables
+ 1. Insert Property Tables
+ 1. Develop Specification Text
+ 1. Interate To Completion
+ 1. Develop Final Example Messages from JADN Schema
+ 1. Define Conformance Requirements
+ 1. Review, Approval, and Publication
 
 
-## 2.2 Next Heading
-text.
+## 2.2 AP Specification Structure
+
+ * Body
+   * sections
+ * Annex(es)
+ * Appendices
+ * Associated schema files
+
+-------
+
+# 3 AP Development Process Walkthrough
+
+## 3.1 AP Develompent Initiation
+
+## 3.2 Develop Use Cases
+
+## 3.3 Develop Example Messages
+
+## 3.4 Develop JADN Schema
+
+## 3.5 Link JADN Schema
+
+## 3.6 Create Property Tables
+
+## 3.7 Insert Property Tables
+
+## 3.8 Develop Specification Text
+
+## 3.9 Interate To Completion
+
+## 3.10 Develop Final Example Messages from JADN Schema
+
+## 3.11 Define Conformance Requirements
+
+## 3.12 Review, Approval, and Publication
+
 
 -------
 
 # Appendix A. Informative References
+
+ * OpenC2 Architecture
+ * OpenC2 Language Spec
+ * JADN Spec
+ * Information Modeling with JADN CN
+ * OASIS Work Product Process Documentation
 
 <!-- Required section -->
 
