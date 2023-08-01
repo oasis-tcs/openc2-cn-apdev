@@ -252,18 +252,31 @@ applying JADN information modeling to the process.
 ##### **Figure 2-1:  Actuator Profile Development Process**
 ![Figure 2-1: AP Development Process](images/CN-AP-Dev-Overview.drawio.png)
 
- 1. AP Develompent Initiation
- 1. Develop Use Cases
- 1. Develop Example Messages
- 1. Develop JADN Schema
- 1. Link JADN Schema
- 1. Create Property Tables
- 1. Insert Property Tables
- 1. Develop Specification Text
- 1. Interate To Completion
- 1. Develop Final Example Messages from JADN Schema
- 1. Define Conformance Requirements
- 1. Review, Approval, and Publication
+ 1. **AP Development Initiation:** Identify the need, define the scope, receive
+    TC approval, request a starter document, establish a work environment.
+ 2. **Develop AP Content:** a development loop for creating the AP,
+ 
+    A) **Develop Use Cases:** Identify use case(s) for control of cyber defense
+       function for the AP.
+
+    B) **Develop Example Messages:** Develop example messages to implement the
+       defined use case(s), and capture in an Examples appendix.
+    
+    C) **Develop JADN Schema:** Develop the JADN information model specifying
+       the types needed to create and validate the example messages.
+    
+    D) **Link JADN Schema:**  Link to the JADN schema file(s) from Annex A.
+
+    E) **Create Property Tables:** Use JADN tooling to generate property tables
+       from the JADN schema.
+
+    F) **Insert Property Tables and Associated Text:** Add the property tables
+       for the schema to the body of the AP specification, and develop
+       corresponding text content.
+ 3. **Interate To Completion:**
+ 4.  Develop Final Example Messages from JADN Schema: 
+ 5.  Define Conformance Requirements
+ 6.  Review, Approval, and Publication
 
 
 ## 2.2 AP Specification Structure
