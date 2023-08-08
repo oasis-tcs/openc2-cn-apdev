@@ -72,21 +72,6 @@ For complete copyright information please see the full Notices section in an App
 
 # Table of Contents
 
-- [OpenC2 Actuator Profile Development Process Version 1.0](#openc2-actuator-profile-development-process-version-10)
-  - [Committee Note 01](#committee-note-01)
-  - [03 July 2023](#03-july-2023)
-      - [This stage:](#this-stage)
-      - [Previous stage:](#previous-stage)
-      - [Latest stage:](#latest-stage)
-      - [Technical Committee:](#technical-committee)
-      - [Chairs:](#chairs)
-      - [Editors:](#editors)
-      - [Related work:](#related-work)
-      - [Abstract:](#abstract)
-      - [Status:](#status)
-      - [Citation format:](#citation-format)
-      - [Notices](#notices)
-- [Table of Contents](#table-of-contents)
 - [1 Introduction](#1-introduction)
   - [1.1 Purpose](#11-purpose)
   - [1.2 Glossary](#12-glossary)
