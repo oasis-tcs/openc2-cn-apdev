@@ -247,6 +247,11 @@ applying JADN information modeling to the process.
 
 ## 2.1 Process Steps
 
+Figure 2-1 illustrates a process for the development of an Actuator Profile (AP)
+based on defining use cases, prototopying messages, and formalizing that
+material in a JADN information model. The process assumes a degree of iteration
+toward completion and its execution does not need to be strictly linear.
+
 > Note: inital draft graphic, to be refined as document develops
 
 ##### **Figure 2-1:  Actuator Profile Development Process**
@@ -273,10 +278,19 @@ applying JADN information modeling to the process.
     F) **Insert Property Tables and Associated Text:** Add the property tables
        for the schema to the body of the AP specification, and develop
        corresponding text content.
- 3. **Interate To Completion:**
- 4.  Develop Final Example Messages from JADN Schema: 
- 5.  Define Conformance Requirements
- 6.  Review, Approval, and Publication
+ 3. **Interate To Completion:** As the AP matures the initial use case(s) can be
+    refined and additional use cases can be defined and integrated as described
+    in Step 2.
+ 4.  **Develop Final Example Messages from JADN Schema:** The example message
+     content included in the AP should be finalized based on the JADN schema to
+     ensure the messages are valid and conform to the schema.
+ 5.  **Define Conformance Requirements:** All OASIS specifications are required
+     to include [conformance requirements](https://docs.oasis-open.org/templates/TCHandbook/ConformanceGuidelines.html). 
+ 6.  **Review, Approval, and Publication:** All OASIS specifications are
+     required to follow the standard approval process, including [public
+     review](https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/#publicReview)
+     prior to [final TC
+     approval](https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/#committeeSpec).
 
 
 ## 2.2 AP Specification Structure
