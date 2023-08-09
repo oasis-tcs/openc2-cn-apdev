@@ -51,6 +51,7 @@ This is a Non-Standards Track Work Product. The patent provisions of the OASIS I
 This document was last revised or approved by the OASIS Open Command and Control (OpenC2) TC on the above date. The level of approval is also listed above. Check the "Latest stage" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=openc2#technical.
 
 TC members should send comments on this document to the TC's email list. Others should send comments to the TC's public comment list, after subscribing to it by following the instructions at the "Send A Comment" button on the TC's web page at https://www.oasis-open.org/committees/openc2/.
+
 #### Citation format:
 When referencing this document the following citation format should be used:
 
@@ -70,7 +71,44 @@ For complete copyright information please see the full Notices section in an App
 -------
 
 # Table of Contents
-[[TOC will be inserted here]]
+
+- [1 Introduction](#1-introduction)
+  - [1.1 Purpose](#11-purpose)
+  - [1.2 Glossary](#12-glossary)
+    - [1.2.1 Definitions of terms](#121-definitions-of-terms)
+    - [1.2.2 Acronyms and abbreviations](#122-acronyms-and-abbreviations)
+    - [1.2.3 Document conventions](#123-document-conventions)
+  - [1.3 Background](#13-background)
+    - [1.3.1 Open Command and Control (OpenC2)](#131-open-command-and-control-openc2)
+        - [Figure 1-1: OpenC2 Request / Response Paradigm](#figure-1-1-openc2-request--response-paradigm)
+    - [1.3.2 JSON Abstract Data Notation (JADN)](#132-json-abstract-data-notation-jadn)
+    - [1.3.3 OpenC2 Actuator Profiles](#133-openc2-actuator-profiles)
+- [2 AP Development Process Overview](#2-ap-development-process-overview)
+  - [2.1 Process Steps](#21-process-steps)
+        - [**Figure 2-1:  Actuator Profile Development Process**](#figure-2-1--actuator-profile-development-process)
+  - [2.2 AP Specification Structure](#22-ap-specification-structure)
+- [3 AP Development Process Walkthrough](#3-ap-development-process-walkthrough)
+  - [3.1 AP Develompent Initiation](#31-ap-develompent-initiation)
+  - [3.2 Develop Use Cases](#32-develop-use-cases)
+  - [3.3 Develop Example Messages](#33-develop-example-messages)
+  - [3.4 Develop JADN Schema](#34-develop-jadn-schema)
+  - [3.5 Link JADN Schema](#35-link-jadn-schema)
+  - [3.6 Create Property Tables](#36-create-property-tables)
+  - [3.7 Insert Property Tables](#37-insert-property-tables)
+  - [3.8 Develop Specification Text](#38-develop-specification-text)
+  - [3.9 Interate To Completion](#39-interate-to-completion)
+  - [3.10 Develop Final Example Messages from JADN Schema](#310-develop-final-example-messages-from-jadn-schema)
+  - [3.11 Define Conformance Requirements](#311-define-conformance-requirements)
+  - [3.12 Review, Approval, and Publication](#312-review-approval-and-publication)
+- [Appendix A. Informative References](#appendix-a-informative-references)
+          - [\[OpenC2-HTTPS-v1.0\]](#openc2-https-v10)
+          - [\[OpenC2-SLPF-v1.0\]](#openc2-slpf-v10)
+- [Appendix B. Acknowledgments](#appendix-b-acknowledgments)
+  - [B.1 Special Thanks](#b1-special-thanks)
+  - [B.2 Participants](#b2-participants)
+- [Appendix C. Revision History](#appendix-c-revision-history)
+- [Appendix D. Notices](#appendix-d-notices)
+
 
 -------
 
@@ -247,23 +285,50 @@ applying JADN information modeling to the process.
 
 ## 2.1 Process Steps
 
+Figure 2-1 illustrates a process for the development of an Actuator Profile (AP)
+based on defining use cases, prototopying messages, and formalizing that
+material in a JADN information model. The process assumes a degree of iteration
+toward completion and its execution does not need to be strictly linear.
+
 > Note: inital draft graphic, to be refined as document develops
 
 ##### **Figure 2-1:  Actuator Profile Development Process**
 ![Figure 2-1: AP Development Process](images/CN-AP-Dev-Overview.drawio.png)
 
- 1. AP Develompent Initiation
- 1. Develop Use Cases
- 1. Develop Example Messages
- 1. Develop JADN Schema
- 1. Link JADN Schema
- 1. Create Property Tables
- 1. Insert Property Tables
- 1. Develop Specification Text
- 1. Interate To Completion
- 1. Develop Final Example Messages from JADN Schema
- 1. Define Conformance Requirements
- 1. Review, Approval, and Publication
+ 1. **AP Development Initiation:** Identify the need, define the scope, receive
+    TC approval, request a starter document, establish a work environment.
+ 2. **Develop AP Content:** a development loop for creating the AP,
+ 
+    A) **Develop Use Cases:** Identify use case(s) for control of cyber defense
+       function for the AP.
+
+    B) **Develop Example Messages:** Develop example messages to implement the
+       defined use case(s), and capture in an Examples appendix.
+    
+    C) **Develop JADN Schema:** Develop the JADN information model specifying
+       the types needed to create and validate the example messages.
+    
+    D) **Link JADN Schema:**  Link to the JADN schema file(s) from Annex A.
+
+    E) **Create Property Tables:** Use JADN tooling to generate property tables
+       from the JADN schema.
+
+    F) **Insert Property Tables and Associated Text:** Add the property tables
+       for the schema to the body of the AP specification, and develop
+       corresponding text content.
+ 3. **Interate To Completion:** As the AP matures the initial use case(s) can be
+    refined and additional use cases can be defined and integrated as described
+    in Step 2.
+ 4.  **Develop Final Example Messages from JADN Schema:** The example message
+     content included in the AP should be finalized based on the JADN schema to
+     ensure the messages are valid and conform to the schema.
+ 5.  **Define Conformance Requirements:** All OASIS specifications are required
+     to include [conformance requirements](https://docs.oasis-open.org/templates/TCHandbook/ConformanceGuidelines.html). 
+ 6.  **Review, Approval, and Publication:** All OASIS specifications are
+     required to follow the standard approval process, including [public
+     review](https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/#publicReview)
+     prior to [final TC
+     approval](https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/#committeeSpec).
 
 
 ## 2.2 AP Specification Structure
