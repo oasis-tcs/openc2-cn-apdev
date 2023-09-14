@@ -378,7 +378,11 @@ toward completion and its execution does not need to be strictly linear.
 
 # 3 AP Development Process Walkthrough
 
-## 3.1 AP Develompent Initiation
+## 3.1 AP Development Initiation
+
+The OpenC2 TC follows OASIS processes for the initiation of new work items. 
+The details of the TC's process are captured in 
+[Section 4 of the TC's _Documentation Norms_](https://github.com/oasis-tcs/openc2-tc-ops/blob/main/Documentation-Norms.md#4-openc2-tc-work-product-development-process). 
 
 ## 3.2 Develop Use Cases
 
