@@ -281,9 +281,56 @@ applying JADN information modeling to the process.
 
 # 2 AP Development Process Overview
 
-> introductory words
+This section describes the standard structure of an OpenC2 AP and provides an
+overview of the development process that will be detailed in 
+[Section 3](#3-ap-development-process-walkthrough).
 
-## 2.1 Process Steps
+## 2.1 AP Specification Structure
+
+OpenC2 APs employ a common structure to ensure consistent inclusion of the
+essential content.  As APs are published as OASIS Specifications, the structure
+also incorporates standard document elements defined by OASIS. As specified in
+the *OpenC2 Language Specification*, an AP *may* extend the OpenC2 language by
+defining extension targets, arguments, and specifiers needed to support the
+function the AP is addressing, but *may not* define actions beyond those
+contained in the LS.
+
+The focus of the process described in this CN is to identify and refine the
+specific actions, targets, arguments, specifiers, and supporting data types
+needed for the AP, to illustrate their use with example message content, and to
+formally define that in a schema using the JADN information modeling language.
+
+ * Body
+   * 1: Introduction (including Glossary, Acronyms and Abbreviation, Overview,
+     Purpose and Scope)
+   * 2: OpenC2 Language Binding 
+     * 2.1: OpenC2 Command Components
+       * 2.1.1: Actions -- identifies the actions relevant for this AP
+       * 2.1.2: Targets -- identifies the targets relevant for this AP,
+         including extension targets
+       * 2.1.3: Type Definitions -- identifies extension types relevant for this
+         AP targets
+       * 2.1.4: Command Arguments
+       * 2.1.5: Actuator Specifiers
+     * 2.2: OpenC2 Response Components
+     * 2.3: OpenC2 Commands -- defines the Action / Target pairs for this AP
+   * 3: Conformance -- defines requirements for claiming conformance to this AP
+ * Annex A: JADN Schema -- identifies the JADN schema files defining the
+   normative schema for this AP. The schema file(s) are normative, per OASIS
+   conventions, and take precedence over the text in the AP specification. The
+   schema(s) are linked in an _Annex_ to support potential adoption of the AP as
+   an ITO-T Recommendation (Annexes are normative in ITU-T Recommendations,
+   Appendices are non-normative).
+ * Appendices
+   * Appendix A: References
+   * Appendix B: Safety, Security, and Privacy Considerations
+   * Appendix C: Acknowledgements
+   * Appendix D: Revision History
+   * Appendix E: Message Examples
+   * Appendix F: Notices
+ * Associated schema files (packaged separately, linked from Annex A)
+ * 
+## 2.2 Process Steps
 
 Figure 2-1 illustrates a process for the development of an Actuator Profile (AP)
 based on defining use cases, prototopying messages, and formalizing that
@@ -331,13 +378,7 @@ toward completion and its execution does not need to be strictly linear.
      approval](https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/#committeeSpec).
 
 
-## 2.2 AP Specification Structure
 
- * Body
-   * sections
- * Annex(es)
- * Appendices
- * Associated schema files
 
 -------
 
