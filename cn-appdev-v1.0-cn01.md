@@ -305,7 +305,8 @@ formally define that in a schema using the JADN information modeling language.
        * 2.1.4: Command Arguments
        * 2.1.5: Actuator Specifiers
      * 2.2: OpenC2 Response Components
-     * 2.3: OpenC2 Commands -- defines the Action / Target pairs for this AP
+     * 2.3: OpenC2 Commands -- defines the valid Action / Target pairs for this AP
+       * 2.3.x -- describes each valid command and the expected behavior
    * 3: Conformance -- defines requirements for claiming conformance to this AP
  * Annex A: JADN Schema -- identifies the JADN schema files defining the
    normative schema for this AP. The schema file(s) are normative, per OASIS
