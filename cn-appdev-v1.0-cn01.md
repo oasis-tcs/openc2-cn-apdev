@@ -422,6 +422,18 @@ complexity of the Actuator being profiled.
 
 ## 3.3 Develop Example Messages
 
+Each use case should be supported by one or more Request / Response pairs that
+illustrate the message content needed to carry out the use case. Depending on
+the level of flexbility allowed by parameters defined for the Request and range
+of data types potentially returned in a Reponse, multiple Request / Response
+pairs may be needed to fully explore the implementation of a use case.
+
+To provide specificity, example messages should be written out completely. This
+is typically done by writing JSON code for each Request and the associated
+Response, providing example values for the parameters and return data. As with
+use cases, the development of example messages often uncovers unanticipted needs
+for additional functions or information types.
+
 ## 3.4 Develop JADN Schema
 
 ## 3.5 Link JADN Schema
