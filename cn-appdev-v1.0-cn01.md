@@ -406,7 +406,8 @@ following:
         enumerate all of the information necessary to completely define the
         meaning and scope of the command 
 
- - The activities to be performend by the Actuator on receipt of the Request
+ - The activities to be performend by the Actuator on receipt of the Request and
+   the information expected to be returned
 
  - The **OpenC2 Response**
    - The data types and structures appropriate for responding to this Request
