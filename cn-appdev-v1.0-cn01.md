@@ -386,6 +386,41 @@ The details of the TC's process are captured in
 
 ## 3.2 Develop Use Cases
 
+A primary activity in developing an AP is to identify the cyber defense
+function(s) to be invoked and document the specifics. Use cases are employed to
+structure this information. An OpenC2 AP use case will typically describe the
+following:
+
+ - The **OpenC2 Request** (i.e., command)
+   - The Actuator function to be invoked
+   - The OpenC2 Action employed to invoke the functions
+   - The Target of the Action
+     - A Target can be selected from the targets defined in the _OpenC2 Language
+       Specification_
+     - OpenC2 APs can define AP-specific Targets as extensions if a suitable
+       target does not exist in the base set
+    - Additional parameters needed for the command
+      - Parameters can be selected from those defined in the _OpenC2 Language
+        Specification_
+      - OpenC2 APs can define AP-specific data types as extensions in order to
+        enumerate all of the information necessary to completely define the
+        meaning and scope of the command 
+
+ - The activities to be performend by the Actuator on receipt of the Request
+
+ - The **OpenC2 Response**
+   - The data types and structures appropriate for responding to this Request
+      - Data types can be selected from those defined in the _OpenC2 Language
+        Specification_
+      - OpenC2 APs can define AP-specific data types as extensions in order to
+        enumerate all of the information necessary to completely define the
+        meaning and scope of the command 
+
+Use case development often uncovers unanticipted needs for additional functions
+or information types. The quantity of use cases needed for an AP varies with the
+coimplexity of the Actuator being profiled.
+
+
 ## 3.3 Develop Example Messages
 
 ## 3.4 Develop JADN Schema
