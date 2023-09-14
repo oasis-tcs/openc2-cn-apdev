@@ -405,10 +405,8 @@ following:
       - OpenC2 APs can define AP-specific data types as extensions in order to
         enumerate all of the information necessary to completely define the
         meaning and scope of the command 
-
- - The activities to be performend by the Actuator on receipt of the Request and
+ - The activities to be performed by the Actuator on receipt of the Request and
    the information expected to be returned
-
  - The **OpenC2 Response**
    - The data types and structures appropriate for responding to this Request
       - Data types can be selected from those defined in the _OpenC2 Language
@@ -419,7 +417,7 @@ following:
 
 Use case development often uncovers unanticipted needs for additional functions
 or information types. The quantity of use cases needed for an AP varies with the
-coimplexity of the Actuator being profiled.
+complexity of the Actuator being profiled.
 
 
 ## 3.3 Develop Example Messages
