@@ -216,8 +216,7 @@ status and any requested information. This request / response
 paradigm is illustrated in Figure 1-1.
 
 ##### Figure 1-1: OpenC2 Request / Response Paradigm
-![Figure 1-1: OpenC2 Request / Response
-Paradigm](images/MessageFlow.png)
+![Figure 1-1: OpenC2 Request / Response Paradigm](images/MessageFlow.png)
 
 OpenC2 allows the application producing the commands to discover
 the set of capabilities supported by the managed devices (i.e.,
@@ -228,35 +227,28 @@ definitions can be easily extended in a noncentralized manner,
 allowing standard and non-standard capabilities to be defined
 with semantic and syntactic rigor.
 
-> NOTE: add reference links to the following
-
-OpenC2's approach to automating cybersecurity command and control
-is described in the *OpenC2 Architecture Specification*. The
-specifics of the OpenC2 language are defined in the 
-*OpenC2 Language Specification*.
+OpenC2's approach to automating cybersecurity command and control is described
+in the *OpenC2 Architecture Specification*
+[[OpenC2-Arch-v1.0](#openc2-arch-v10)]. The specifics of the OpenC2 language are
+defined in the *OpenC2 Language Specification* [[OpenC2-Lang-v1.0](#openc2-lang-v10)].
 
 ### 1.3.2 JSON Abstract Data Notation (JADN)
 
-JSON Abstract Data Notation (JADN) is a UML-based information
-modeling language that defines data structure independently of
-data format. Information models are used to define and generate
-physical data models, validate information instances, and enable
-lossless translation across data formats. A JADN specification
-consists of two parts: type definitions that comprise the
-information model, and serialization rules that define how
-information instances are represented as data. The information
-model is itself an information instance that can be serialized
-and transferred between applications. The model is documented
-using a compact and expressive interface definition language,
-property tables, or entity relationship diagrams, easing
-integration with existing design processes and architecture
-tools.
+JSON Abstract Data Notation (JADN) is a UML-based information modeling language
+that defines data structure independently of data format. Information models are
+used to define and generate physical data models, validate information
+instances, and enable lossless translation across data formats. A JADN
+specification consists of two parts: type definitions that comprise the
+information model, and serialization rules that define how information instances
+are represented as data. The information model is itself an information instance
+that can be serialized and transferred between applications. The model is
+documented using a compact and expressive interface definition language,
+property tables, or entity relationship diagrams, easing integration with
+existing design processes and architecture tools.
 
-> NOTE: add reference links to the following
-
-The OpenC2 TC has published a *JADN Ppecification*, and a
-companion CN describing the use of JADN in Information Modeling
-(IM).
+The OpenC2 TC has published a *JADN Specification*  [[JADN-v1.0](#jadn-v10)],
+and a companion CN describing the use of JADN in Information Modeling (IM)
+[[IM-JADN-v1.0](#im-jadn-v10)].
 
 ### 1.3.3 OpenC2 Actuator Profiles
 
@@ -313,7 +305,8 @@ formally define that in a schema using the JADN information modeling language.
        * 2.1.4: Command Arguments
        * 2.1.5: Actuator Specifiers
      * 2.2: OpenC2 Response Components
-     * 2.3: OpenC2 Commands -- defines the Action / Target pairs for this AP
+     * 2.3: OpenC2 Commands -- defines the valid Action / Target pairs for this AP
+       * 2.3.x -- describes each valid command and the expected behavior
    * 3: Conformance -- defines requirements for claiming conformance to this AP
  * Annex A: JADN Schema -- identifies the JADN schema files defining the
    normative schema for this AP. The schema file(s) are normative, per OASIS
@@ -329,7 +322,8 @@ formally define that in a schema using the JADN information modeling language.
    * Appendix E: Message Examples
    * Appendix F: Notices
  * Associated schema files (packaged separately, linked from Annex A)
- * 
+
+
 ## 2.2 Process Steps
 
 Figure 2-1 illustrates a process for the development of an Actuator Profile (AP)
@@ -350,7 +344,7 @@ toward completion and its execution does not need to be strictly linear.
        function for the AP.
 
     B) **Develop Example Messages:** Develop example messages to implement the
-       defined use case(s), and capture in an Examples appendix.
+       defined use case(s), and capture in the Examples appendix.
     
     C) **Develop JADN Schema:** Develop the JADN information model specifying
        the types needed to create and validate the example messages.
@@ -384,11 +378,61 @@ toward completion and its execution does not need to be strictly linear.
 
 # 3 AP Development Process Walkthrough
 
-## 3.1 AP Develompent Initiation
+## 3.1 AP Development Initiation
+
+The OpenC2 TC follows OASIS processes for the initiation of new work items. 
+The details of the TC's process are captured in 
+[Section 4 of the TC's _Documentation Norms_](https://github.com/oasis-tcs/openc2-tc-ops/blob/main/Documentation-Norms.md#4-openc2-tc-work-product-development-process). 
 
 ## 3.2 Develop Use Cases
 
+A primary activity in developing an AP is to identify the cyber defense
+function(s) to be invoked and document the specifics. Use cases are employed to
+structure this information. An OpenC2 AP use case will typically describe the
+following:
+
+ - The **OpenC2 Request** (i.e., command)
+   - The Actuator function to be invoked
+   - The OpenC2 Action employed to invoke the functions
+   - The Target of the Action
+     - A Target can be selected from the targets defined in the _OpenC2 Language
+       Specification_
+     - OpenC2 APs can define AP-specific Targets as extensions if a suitable
+       target does not exist in the base set
+    - Additional parameters needed for the command
+      - Parameters can be selected from those defined in the _OpenC2 Language
+        Specification_
+      - OpenC2 APs can define AP-specific data types as extensions in order to
+        enumerate all of the information necessary to completely define the
+        meaning and scope of the command 
+ - The activities to be performed by the Actuator on receipt of the Request and
+   the information expected to be returned
+ - The **OpenC2 Response**
+   - The data types and structures appropriate for responding to this Request
+      - Data types can be selected from those defined in the _OpenC2 Language
+        Specification_
+      - OpenC2 APs can define AP-specific data types as extensions in order to
+        enumerate all of the information necessary to completely define the
+        meaning and scope of the command 
+
+Use case development often uncovers unanticipted needs for additional functions
+or information types. The quantity of use cases needed for an AP varies with the
+complexity of the Actuator being profiled.
+
+
 ## 3.3 Develop Example Messages
+
+Each use case should be supported by one or more Request / Response pairs that
+illustrate the message content needed to carry out the use case. Depending on
+the level of flexbility allowed by parameters defined for the Request and range
+of data types potentially returned in a Reponse, multiple Request / Response
+pairs may be needed to fully explore the implementation of a use case.
+
+To provide specificity, example messages should be written out completely. This
+is typically done by writing JSON code for each Request and the associated
+Response, providing example values for the parameters and return data. As with
+use cases, the development of example messages often uncovers unanticipted needs
+for additional functions or information types.
 
 ## 3.4 Develop JADN Schema
 
@@ -432,10 +476,42 @@ For references to W3C Recommendations, use the approved citation formats at: \
 https://docs.oasis-open.org/templates/w3c-recommendations-list/w3c-recommendations-list.html. \
 Remove this note before submitting for publication.)
 
+###### [IM-JADN-v1.0]
+
+_Information Modeling with JADN Version 1.0_. Edited by David Kemp. 19 April
+2023. OASIS Committee Note 01.
+https://docs.oasis-open.org/openc2/imjadn/v1.0/cn01/imjadn-v1.0-cn01.html.
+Latest stage: https://docs.oasis-open.org/openc2/imjadn/v1.0/imjadn-v1.0.html.
+
+###### [JADN-v1.0]
+_JSON Abstract Data Notation Version 1.0_. Edited by David Kemp. 17 August 2021.
+OASIS Committee Specification 01.
+https://docs.oasis-open.org/openc2/jadn/v1.0/cs01/jadn-v1.0-cs01.html. Latest
+stage: https://docs.oasis-open.org/openc2/jadn/v1.0/jadn-v1.0.html.
+
+###### [OpenC2-Arch-v1.0]
+_Open Command and Control (OpenC2) Architecture Specification Version 1.0_.
+Edited by Duncan Sparrell. 30 September 2022. OASIS Committee Specification 01.
+https://docs.oasis-open.org/openc2/oc2arch/v1.0/cs01/oc2arch-v1.0-cs01.html.
+Latest stage: https://docs.oasis-open.org/openc2/oc2arch/v1.0/oc2arch-v1.0.html.
+
+###### [OpenC2-Lang-v1.0]
+
+_Open Command and Control (OpenC2) Language Specification Version 1.0_. Edited
+by Jason Romano and Duncan Sparrell. 24 November 2019. OASIS Committee
+Specification 02.
+https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html. Latest
+version: https://docs.oasis-open.org/openc2/oc2ls/v1.0/oc2ls-v1.0.html.
+
 ###### [OpenC2-HTTPS-v1.0]
-_Specification for Transfer of OpenC2 Messages via HTTPS Version 1.0_. Edited by David Lemire. Latest stage: http://docs.oasis-open.org/openc2/open-impl-https/v1.0/open-impl-https-v1.0.html
+_Specification for Transfer of OpenC2 Messages via HTTPS Version 1.0_. Edited by
+David Lemire. Latest stage:
+http://docs.oasis-open.org/openc2/open-impl-https/v1.0/open-impl-https-v1.0.html
+
 ###### [OpenC2-SLPF-v1.0]
-_Open Command and Control (OpenC2) Profile for Stateless Packet Filtering Version 1.0_. Edited by Joe Brule, Duncan Sparrell, and Alex Everett. Latest stage: http://docs.oasis-open.org/openc2/oc2slpf/v1.0/oc2slpf-v1.0.html
+_Open Command and Control (OpenC2) Profile for Stateless Packet Filtering
+Version 1.0_. Edited by Joe Brule, Duncan Sparrell, and Alex Everett. Latest
+stage: http://docs.oasis-open.org/openc2/oc2slpf/v1.0/oc2slpf-v1.0.html
 
 -------
 
