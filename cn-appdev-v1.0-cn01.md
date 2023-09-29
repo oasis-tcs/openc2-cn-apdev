@@ -405,17 +405,18 @@ following:
       - OpenC2 APs can define AP-specific data types as extensions in order to
         enumerate all of the information necessary to completely define the
         meaning and scope of the command 
- - The activities to be performed by the Actuator on receipt of the Request and
-   the information expected to be returned
+ - The **Actuator Behavior** describing the activities to be performed by the
+   Actuator on receipt of the Request and the information expected to be
+   returned
  - The **OpenC2 Response**
    - The data types and structures appropriate for responding to this Request
       - Data types can be selected from those defined in the _OpenC2 Language
         Specification_
       - OpenC2 APs can define AP-specific data types as extensions in order to
         enumerate all of the information necessary to completely define the
-        meaning and scope of the command 
+        information to be returned in the response 
 
-Use case development often uncovers unanticipted needs for additional functions
+Use case development often uncovers unanticipated needs for additional functions
 or information types. The quantity of use cases needed for an AP varies with the
 complexity of the Actuator being profiled.
 
@@ -431,8 +432,9 @@ pairs may be needed to fully explore the implementation of a use case.
 To provide specificity, example messages should be written out completely. This
 is typically done by writing JSON code for each Request and the associated
 Response, providing example values for the parameters and return data. As with
-use cases, the development of example messages often uncovers unanticipted needs
-for additional functions or information types.
+use cases, the development of example messages often uncovers unanticipated
+needs for additional functions or information types, or may lead to the
+identification of additional use cases.
 
 ## 3.4 Develop JADN Schema
 
