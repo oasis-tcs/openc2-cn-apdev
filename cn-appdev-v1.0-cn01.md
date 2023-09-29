@@ -438,6 +438,68 @@ identification of additional use cases.
 
 ## 3.4 Develop JADN Schema
 
+Describing use cases and then developing example messages to implement them are
+steps toward documenting the actuator interactions with increasing precision.
+Developing a JADN schema for the example messages represents the next step in
+specificity, defining the information model specifying the content of acuator
+requests and responses in precise terms, using a well-defined set of information
+types.
+
+As a simple example, consider developing an initial use case for an actuator
+profile for IP packet filtering. At the use case level, an example use case
+might state: "the packet filter needs to be able to block traffic from a
+collection of network addresses specified as a CIDR block."
+
+To develop example messages, the dimensions of the use case need to be defined
+in more specific terms:
+
+ - What is the OpenC2 Action appropriate for blocking traffic?
+ - What OpenC2 Target is used to specify a CIDR block?
+ - What is the OpenC2 syntax for describing a CIDR block?
+ - Should the ability to block include both IPv4 and IPv6 addresses?
+
+Reviewing the needs defined in the use case against the *OpenC2 Language
+Specification* provides specifics that help in creating example messages:
+
+ - The `deny` Action is appropriate for blocking IP traffic
+ - The `ipv4_net` and `ipv6_net` Targets are used to specify CIDR blocks
+
+With the information from the Language Specification, the formulation of an
+example command in JSON syntax is straightforward:
+
+> NOTE: confirm that the syntax in this example is correct; should the IPv4-Net
+> array use square brackets? `[...]` 
+
+```json
+{
+    "action": "deny",
+    "target": {
+        "ipv4_net": {"1.2.3.0", 24}
+    },
+}
+```
+
+Having defined the command, the next step is to consider the possible responses
+from the actuator: what are the success and failure possibilities in response to
+this `deny` command? What information should the actuator provide back to the
+command Producer? The OpenC2 response message provides for a numeric status code
+(based on the HTTP response code set), an optional human-readable status
+message, and an optional results field that, if used, needs to be defined in the
+actuator profile. For this command, a success or failure indication can be
+provided using the status code and, perhaps, explanatory information regarding a
+failure could be defined for the status message. Since it is typical for packet
+filters to apply rules based on some priority order, a useful return value might
+be the rule number assigned to the new `deny` setting. This might lead, in turn,
+to additional use cases, such as the removal of a rule by specfying its number.
+
+Finally, the JADN information model to support the content developed in the
+example messages should be documented. In this case, the majority of the model
+is simply a subset of the *OpenC2 Language Specification*'s JADN model, but an
+additional data type must be defined for the rule number information in the
+response message.
+
+> NOTE: insert JADN content here for basic message example
+
 ## 3.5 Link JADN Schema
 
 ## 3.6 Create Property Tables
