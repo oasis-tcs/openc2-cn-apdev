@@ -72,6 +72,21 @@ For complete copyright information please see the full Notices section in an App
 
 # Table of Contents
 
+- [OpenC2 Actuator Profile Development Process Version 1.0](#openc2-actuator-profile-development-process-version-10)
+  - [Committee Note 01](#committee-note-01)
+  - [03 July 2023](#03-july-2023)
+      - [This stage:](#this-stage)
+      - [Previous stage:](#previous-stage)
+      - [Latest stage:](#latest-stage)
+      - [Technical Committee:](#technical-committee)
+      - [Chairs:](#chairs)
+      - [Editors:](#editors)
+      - [Related work:](#related-work)
+      - [Abstract:](#abstract)
+      - [Status:](#status)
+      - [Citation format:](#citation-format)
+      - [Notices](#notices)
+- [Table of Contents](#table-of-contents)
 - [1 Introduction](#1-introduction)
   - [1.1 Purpose](#11-purpose)
   - [1.2 Glossary](#12-glossary)
@@ -84,11 +99,11 @@ For complete copyright information please see the full Notices section in an App
     - [1.3.2 JSON Abstract Data Notation (JADN)](#132-json-abstract-data-notation-jadn)
     - [1.3.3 OpenC2 Actuator Profiles](#133-openc2-actuator-profiles)
 - [2 AP Development Process Overview](#2-ap-development-process-overview)
-  - [2.1 Process Steps](#21-process-steps)
+  - [2.1 AP Specification Structure](#21-ap-specification-structure)
+  - [2.2 Process Steps](#22-process-steps)
         - [**Figure 2-1:  Actuator Profile Development Process**](#figure-2-1--actuator-profile-development-process)
-  - [2.2 AP Specification Structure](#22-ap-specification-structure)
 - [3 AP Development Process Walkthrough](#3-ap-development-process-walkthrough)
-  - [3.1 AP Develompent Initiation](#31-ap-develompent-initiation)
+  - [3.1 AP Development Initiation](#31-ap-development-initiation)
   - [3.2 Develop Use Cases](#32-develop-use-cases)
   - [3.3 Develop Example Messages](#33-develop-example-messages)
   - [3.4 Develop JADN Schema](#34-develop-jadn-schema)
@@ -101,6 +116,12 @@ For complete copyright information please see the full Notices section in an App
   - [3.11 Define Conformance Requirements](#311-define-conformance-requirements)
   - [3.12 Review, Approval, and Publication](#312-review-approval-and-publication)
 - [Appendix A. Informative References](#appendix-a-informative-references)
+          - [\[IM-JADN-v1.0\]](#im-jadn-v10)
+          - [\[JADN-v1.0\]](#jadn-v10)
+          - [\[OASIS-Names\]](#oasis-names)
+          - [\[OASIS-TC-Proc\]](#oasis-tc-proc)
+          - [\[OpenC2-Arch-v1.0\]](#openc2-arch-v10)
+          - [\[OpenC2-Lang-v1.0\]](#openc2-lang-v10)
           - [\[OpenC2-HTTPS-v1.0\]](#openc2-https-v10)
           - [\[OpenC2-SLPF-v1.0\]](#openc2-slpf-v10)
 - [Appendix B. Acknowledgments](#appendix-b-acknowledgments)
@@ -502,6 +523,29 @@ response message.
 
 ## 3.5 Link JADN Schema
 
+> NOTE: need to look at emails from TC-ADMIN with some guidance details on
+> naming, linking, namespaces, ets.
+
+The JADN Schema is a formal part of the AP and the normative definition of the
+associated data types and structures. As discussed in [Section
+2.1](#21-ap-specification-structure) Annex A is used to establish the linkage
+between the AP specification document and the JADN schema file(s). Per OASIS TC
+Procedures:
+
+ * All normative  definitions must also be provided in separate plain text
+   files;  
+ * Each text file must be referenced from the Work Product; and
+ * Where any definition in these separate files disagrees with the definition
+   found in the specification documentation, the definition in the separate file
+   prevails.
+
+ ([[OASIS-TC-Proc](#oasis-tc-proc)], Section 2.2.5).
+
+ All JADN files that are part of the schema must be named in accordance with
+ OASIS naming conventions ([OASIS-Names](#oasis-names)), listed in Annex A of
+ the AP specification, and included in the package of files for the AP when
+ submitted to OASIS for approval or publication.
+
 ## 3.6 Create Property Tables
 
 ## 3.7 Insert Property Tables
@@ -553,6 +597,14 @@ OASIS Committee Specification 01.
 https://docs.oasis-open.org/openc2/jadn/v1.0/cs01/jadn-v1.0-cs01.html. Latest
 stage: https://docs.oasis-open.org/openc2/jadn/v1.0/jadn-v1.0.html.
 
+###### [OASIS-Names]
+_OASIS Naming Directives_, 13 February 2020,
+https://docs.oasis-open.org/specGuidelines/ndr/namingDirectives.html
+
+###### [OASIS-TC-Proc]
+_Technical Committee Process_, 01 December 2020,
+https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/
+
 ###### [OpenC2-Arch-v1.0]
 _Open Command and Control (OpenC2) Architecture Specification Version 1.0_.
 Edited by Duncan Sparrell. 30 September 2022. OASIS Committee Specification 01.
@@ -576,6 +628,8 @@ http://docs.oasis-open.org/openc2/open-impl-https/v1.0/open-impl-https-v1.0.html
 _Open Command and Control (OpenC2) Profile for Stateless Packet Filtering
 Version 1.0_. Edited by Joe Brule, Duncan Sparrell, and Alex Everett. Latest
 stage: http://docs.oasis-open.org/openc2/oc2slpf/v1.0/oc2slpf-v1.0.html
+
+
 
 -------
 
