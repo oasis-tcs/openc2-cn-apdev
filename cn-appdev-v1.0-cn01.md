@@ -601,7 +601,15 @@ to codify and document TC acceptance of content developed to-date.
 
 ## 3.9 Develop Final Example Messages from JADN Schema
 
-
+As described in [Section 3.3](#33-develop-example-messages), developing example
+OpenC2 Command and Response messages is a useful technique for clarifying the
+capabilities needed for the profile. Example messages often identify types
+needed, which are then codified in the profile's JADN schema. It is common as
+the profile content evolves that changes are made to the schema such that the
+example messages developed earlier in the process may no longer align with the
+schema. To ensure consistency those examples should be validated against the
+final schema version and, if necessary, updated example messages produced that
+are consistent with the final schema.
 
 ## 3.10 Define Conformance Requirements
 
