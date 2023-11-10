@@ -590,6 +590,15 @@ action.
 
 ## 3.8 Iterate To Completion
 
+The development of a profile is typically iterative as additional use cases and
+revised or additional data types are uncovered. This is also consistent with the
+TC's ["Agile" document development
+concept](https://github.com/oasis-tcs/openc2-tc-ops/blob/main/Documentation-Norms.md#32-agile-document-development-concept)
+under which content is developed over time, with frequent publication of
+[Committee Specification Drafts
+(CSDs)](https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/#committeeDraft)
+to codify and document TC acceptance of content developed to-date.
+
 ## 3.9 Develop Final Example Messages from JADN Schema
 
 ## 3.10 Define Conformance Requirements
