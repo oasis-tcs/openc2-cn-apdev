@@ -373,11 +373,9 @@ toward completion and its execution does not need to be strictly linear.
     D) **Link JADN Schema:**  Link to the JADN schema file(s) from Annex A.
 
     E) **Create Property Tables:** Use JADN tooling to generate property tables
-       from the JADN schema.
+       from the JADN schema. Add the property tables for the schema to the body
+       of the AP specification, and develop corresponding text content.
 
-    F) **Insert Property Tables and Associated Text:** Add the property tables
-       for the schema to the body of the AP specification, and develop
-       corresponding text content.
  3. **Interate To Completion:** As the AP matures the initial use case(s) can be
     refined and additional use cases can be defined and integrated as described
     in Step 2.
@@ -401,9 +399,11 @@ toward completion and its execution does not need to be strictly linear.
 
 ## 3.1 AP Development Initiation
 
-The OpenC2 TC follows OASIS processes for the initiation of new work items. 
-The details of the TC's process are captured in 
-[Section 4 of the TC's _Documentation Norms_](https://github.com/oasis-tcs/openc2-tc-ops/blob/main/Documentation-Norms.md#4-openc2-tc-work-product-development-process). 
+The OpenC2 TC follows OASIS processes for the initiation of new work items. The
+details of the TC's process are captured in [Section 4 of the TC's
+_Documentation Norms_](https://github.com/oasis-tcs/openc2-tc-ops/blob/main/Documentation-Norms.md#4-openc2-tc-work-product-development-process).
+Editors of Actuator Profiles should review the TC's development process and use
+of GitHub and other tools.
 
 ## 3.2 Develop Use Cases
 
