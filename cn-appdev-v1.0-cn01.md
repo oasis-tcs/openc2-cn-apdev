@@ -80,32 +80,25 @@ For complete copyright information please see the full Notices section in an App
     - [1.2.3 Document conventions](#123-document-conventions)
   - [1.3 Background](#13-background)
     - [1.3.1 Open Command and Control (OpenC2)](#131-open-command-and-control-openc2)
-        - [Figure 1-1: OpenC2 Request / Response Paradigm](#figure-1-1-openc2-request--response-paradigm)
     - [1.3.2 JSON Abstract Data Notation (JADN)](#132-json-abstract-data-notation-jadn)
     - [1.3.3 OpenC2 Actuator Profiles](#133-openc2-actuator-profiles)
 - [2 AP Development Process Overview](#2-ap-development-process-overview)
-  - [2.1 Process Steps](#21-process-steps)
-        - [**Figure 2-1:  Actuator Profile Development Process**](#figure-2-1--actuator-profile-development-process)
-  - [2.2 AP Specification Structure](#22-ap-specification-structure)
+  - [2.1 AP Specification Structure](#21-ap-specification-structure)
+  - [2.2 Process Steps](#22-process-steps)
 - [3 AP Development Process Walkthrough](#3-ap-development-process-walkthrough)
-  - [3.1 AP Develompent Initiation](#31-ap-develompent-initiation)
+  - [3.1 AP Development Initiation](#31-ap-development-initiation)
   - [3.2 Develop Use Cases](#32-develop-use-cases)
   - [3.3 Develop Example Messages](#33-develop-example-messages)
   - [3.4 Develop JADN Schema](#34-develop-jadn-schema)
   - [3.5 Link JADN Schema](#35-link-jadn-schema)
   - [3.6 Create Property Tables](#36-create-property-tables)
-  - [3.7 Insert Property Tables](#37-insert-property-tables)
-  - [3.8 Develop Specification Text](#38-develop-specification-text)
-  - [3.9 Interate To Completion](#39-interate-to-completion)
-  - [3.10 Develop Final Example Messages from JADN Schema](#310-develop-final-example-messages-from-jadn-schema)
-  - [3.11 Define Conformance Requirements](#311-define-conformance-requirements)
-  - [3.12 Review, Approval, and Publication](#312-review-approval-and-publication)
+  - [3.7 Develop Specification Text](#37-develop-specification-text)
+  - [3.8 Iterate To Completion](#38-iterate-to-completion)
+  - [3.9 Develop Final Example Messages from JADN Schema](#39-develop-final-example-messages-from-jadn-schema)
+  - [3.10 Define Conformance Requirements](#310-define-conformance-requirements)
+  - [3.11 Review, Approval, and Publication](#311-review-approval-and-publication)
 - [Appendix A. Informative References](#appendix-a-informative-references)
-          - [\[OpenC2-HTTPS-v1.0\]](#openc2-https-v10)
-          - [\[OpenC2-SLPF-v1.0\]](#openc2-slpf-v10)
 - [Appendix B. Acknowledgments](#appendix-b-acknowledgments)
-  - [B.1 Special Thanks](#b1-special-thanks)
-  - [B.2 Participants](#b2-participants)
 - [Appendix C. Revision History](#appendix-c-revision-history)
 - [Appendix D. Notices](#appendix-d-notices)
 
@@ -352,11 +345,12 @@ toward completion and its execution does not need to be strictly linear.
     D) **Link JADN Schema:**  Link to the JADN schema file(s) from Annex A.
 
     E) **Create Property Tables:** Use JADN tooling to generate property tables
-       from the JADN schema.
+       from the JADN schema. 
 
     F) **Insert Property Tables and Associated Text:** Add the property tables
        for the schema to the body of the AP specification, and develop
        corresponding text content.
+
  3. **Interate To Completion:** As the AP matures the initial use case(s) can be
     refined and additional use cases can be defined and integrated as described
     in Step 2.
@@ -380,9 +374,11 @@ toward completion and its execution does not need to be strictly linear.
 
 ## 3.1 AP Development Initiation
 
-The OpenC2 TC follows OASIS processes for the initiation of new work items. 
-The details of the TC's process are captured in 
-[Section 4 of the TC's _Documentation Norms_](https://github.com/oasis-tcs/openc2-tc-ops/blob/main/Documentation-Norms.md#4-openc2-tc-work-product-development-process). 
+The OpenC2 TC follows OASIS processes for the initiation of new work items. The
+details of the TC's process are captured in [Section 4 of the TC's
+_Documentation Norms_](https://github.com/oasis-tcs/openc2-tc-ops/blob/main/Documentation-Norms.md#4-openc2-tc-work-product-development-process).
+Editors of Actuator Profiles should review the TC's development process and use
+of GitHub and other tools.
 
 ## 3.2 Develop Use Cases
 
@@ -502,30 +498,121 @@ response message.
 
 ## 3.5 Link JADN Schema
 
+> NOTE: need to look at emails from TC-ADMIN with some guidance details on
+> naming, linking, namespaces, ets.
+
+The JADN Schema is a formal part of the AP and the normative definition of the
+associated data types and structures. As discussed in [Section
+2.1](#21-ap-specification-structure) Annex A is used to establish the linkage
+between the AP specification document and the JADN schema file(s). Per OASIS TC
+Procedures:
+
+ * All normative  definitions must also be provided in separate plain text
+   files;  
+ * Each text file must be referenced from the Work Product; and
+ * Where any definition in these separate files disagrees with the definition
+   found in the specification documentation, the definition in the separate file
+   prevails.
+
+ ([[OASIS-TC-Proc](#oasis-tc-proc)], Section 2.2.5).
+
+ All JADN files that are part of the schema must be named in accordance with
+ OASIS naming conventions ([OASIS-Names](#oasis-names)), identified in the front
+ matter under Additional Artifacts and Declared JADN Namespaces, listed in
+ Annex A of the AP specification, and included in the package of files for the
+ AP when submitted to OASIS for approval or publication.
+
+ The OpenC2 convention for APs is to identify the JADN schema (i.e., the JSON
+ data representation in a separate file) as the normative schema, and present
+ the JIDL version in an Appendix to provide a readily human-readable
+ presentaiton of the schema in the AP specification document.
+
 ## 3.6 Create Property Tables
 
-## 3.7 Insert Property Tables
+To create readable, structured documentation of the types defined for the
+profile, the JADN schema is processed via automated tooling to create a property
+tables representation. These tables are integrated into Sections 2.1 and 2.2 of
+the AP document to identify the various data structures and types used in the
+profile. As described in section 3.1.4 of
+[[OpenC2-Lang-v1.0](#openc2-lang-v10)], the specification of extensions in an AP
+to fit the needs of a particular cyberdefense function are anticipated and
+supported by the OpenC2 language. These extensions are defined in the profile's
+JADN schema and documented in the specification using property tables.
 
-## 3.8 Develop Specification Text
+The fields of a property table vary with the needs of the data type being
+described but will include an appropriate subset of the following:
 
-## 3.9 Interate To Completion
+ * **ID:** an integer identifier for a field in a compound type
+ * **Name:** the name of the type or field being defined
+ * **Type:** the data type for the type or field being defined
+ * **#:** a field to define the cardinality requirements of type or field being
+   defined
+ * **Description:** a description of the purpose of the type or field being
+   defined
 
-## 3.10 Develop Final Example Messages from JADN Schema
+All of these fields are normative except for the `Description` field and their
+meanings are as defined in the [[JADN-v1.0](#jadn-v10)] specification.
 
-## 3.11 Define Conformance Requirements
+## 3.7 Develop Specification Text 
 
-## 3.12 Review, Approval, and Publication
+Descriptive text is needed to complement the JADN schema and property tables.
+The text should provide details (e.g., usage requirements) regarding the
+extensions defined in the AP. Section 2.3.x should walk through the commands
+defined in the profile, describing the expected processing associated with each
+command and any specific requirements associated with Responses to particular
+commands. This content is typically organized to present each OpenC2 Action
+included in the profile and discuss the handling of each valid target for that
+action.
 
+## 3.8 Iterate To Completion
+
+The development of a profile is typically iterative as additional use cases and
+revised or additional data types are uncovered. This is also consistent with the
+TC's ["Agile" document development
+concept](https://github.com/oasis-tcs/openc2-tc-ops/blob/main/Documentation-Norms.md#32-agile-document-development-concept)
+under which content is developed over time, with frequent publication of
+[Committee Specification Drafts
+(CSDs)](https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/#committeeDraft)
+to codify and document TC acceptance of content developed to-date.
+
+## 3.9 Develop Final Example Messages from JADN Schema
+
+As described in [Section 3.3](#33-develop-example-messages), developing example
+OpenC2 Command and Response messages is a useful technique for clarifying the
+capabilities needed for the profile. Example messages often identify types
+needed, which are then codified in the profile's JADN schema. It is common as
+the profile content evolves that changes are made to the schema such that the
+example messages developed earlier in the process may no longer align with the
+schema. To ensure consistency those examples should be validated against the
+final schema version and, if necessary, updated example messages produced that
+are consistent with the final schema.
+
+## 3.10 Define Conformance Requirements
+
+All OASIS specifications require a conformance section, consisting of
+[conformance
+clauses](https://www.oasis-open.org/policies-guidelines/oasis-defined-terms-2018-05-22/#dConformanceClause).
+The editor of the profile must determine how to organize the conformance
+clauses, which are a logical extension of the conformance clauses contained in
+[[OpenC2-Lang-v1.0](#openc2-lang-v10)]. 
+
+OASIS has published guidance on developing conformance requirements
+[[OASIS-Conformance](#oasis-conformance)]. 
+
+A primary concern for the editor of a profile is to define logical groupings of
+conformance clauses against the requirements of the profile to form "conformance
+targets", which can serve to organize and simplify the conformance section of
+the specification.
+
+## 3.11 Review, Approval, and Publication
+
+When the Actuator Profile specification is deemed complete, its approval is
+governed by the [[OASIS TC Process](#oasis-tc-proc)] requirements for public
+review and approval of a Committee Specification. The OpenC2 TC has documented its approach to [handling public review comments](https://github.com/oasis-tcs/openc2-tc-ops/blob/main/Documentation-Norms.md#45-public-review-comment-handling) and [publishing the approved Committee Specification](https://github.com/oasis-tcs/openc2-tc-ops/blob/main/Documentation-Norms.md#46-cs-approval--publication). 
 
 -------
 
 # Appendix A. Informative References
-
- * OpenC2 Architecture
- * OpenC2 Language Spec
- * JADN Spec
- * Information Modeling with JADN CN
- * OASIS Work Product Process Documentation
 
 <!-- Required section -->
 
@@ -553,6 +640,18 @@ OASIS Committee Specification 01.
 https://docs.oasis-open.org/openc2/jadn/v1.0/cs01/jadn-v1.0-cs01.html. Latest
 stage: https://docs.oasis-open.org/openc2/jadn/v1.0/jadn-v1.0.html.
 
+###### [OASIS-Conformance]
+_Guidelines to Writing Conformance Clauses for OASIS Specifications_, 01 April 2018,
+https://docs.oasis-open.org/templates/TCHandbook/ConformanceGuidelines.html
+
+###### [OASIS-Names]
+_OASIS Naming Directives_, 13 February 2020,
+https://docs.oasis-open.org/specGuidelines/ndr/namingDirectives.html
+
+###### [OASIS-TC-Proc]
+_Technical Committee Process_, 01 December 2020,
+https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/
+
 ###### [OpenC2-Arch-v1.0]
 _Open Command and Control (OpenC2) Architecture Specification Version 1.0_.
 Edited by Duncan Sparrell. 30 September 2022. OASIS Committee Specification 01.
@@ -576,6 +675,8 @@ http://docs.oasis-open.org/openc2/open-impl-https/v1.0/open-impl-https-v1.0.html
 _Open Command and Control (OpenC2) Profile for Stateless Packet Filtering
 Version 1.0_. Edited by Joe Brule, Duncan Sparrell, and Alex Everett. Latest
 stage: http://docs.oasis-open.org/openc2/oc2slpf/v1.0/oc2slpf-v1.0.html
+
+
 
 -------
 
