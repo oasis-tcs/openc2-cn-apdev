@@ -7,9 +7,9 @@
 
 # OpenC2 Actuator Profile Development Process Version 1.0
 
-## Committee Note 01
+## Working Draft 01 for Committee Note 01
 
-## 03 July 2023
+## 10 November 2023
 
 &nbsp;
 
@@ -39,8 +39,16 @@ David Kemp (d.kemp@cyber.nsa.gov), [National Security Agency](https://www.nsa.go
 
 #### Related work:
 This document is related to:
-* Related specifications (include hyperlink, preferably to HTML format) \
-`(remove "Related work" section if no entries)`
+* *Open Command and Control (OpenC2) Architecture Specification Version 1.0*.
+  Edited by Duncan Sparrell. 30 September 2022. OASIS Committee Specification 01.
+  https://docs.oasis-open.org/openc2/oc2arch/v1.0/oc2arch-v1.0.html.
+* *Open Command and Control (OpenC2) Language Specification Version 1.0*. Edited
+  by Jason Romano and Duncan Sparrell. 24 November 2019. OASIS Committee
+  Specification 02.
+  https://docs.oasis-open.org/openc2/oc2ls/v1.0/oc2ls-v1.0.html.
+* *JSON Abstract Data Notation Version 1.0*. Edited by David Kemp. 17 August
+  2021. OASIS Committee Specification 01.
+  https://docs.oasis-open.org/openc2/jadn/v1.0/jadn-v1.0.html.
 
 #### Abstract:
 Open Command and Control (OpenC2) is a concise and extensible language to enable machine-to-machine communications for purposes of command and control of cyber defense components in a manner that is agnostic of the underlying products, technologies, transport mechanisms or other aspects of the implementation. OpenC2 Actuator Profiles (APs) specify the subset of the OpenC2 language relevant in the context of specific actuator functions. A profile refines the meaning of language elements used to perform the actuator function, and often defines additional elements that are relevant and/or unique to that function. This Committee Note describes the TC’s process for using the JSON Abstract Data Notation (JADN) information modeling language in the development of APs, resulting in a rigorous schema for an AP properly integrated with the base OpenC2 language.
