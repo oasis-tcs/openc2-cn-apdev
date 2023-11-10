@@ -601,6 +601,8 @@ to codify and document TC acceptance of content developed to-date.
 
 ## 3.9 Develop Final Example Messages from JADN Schema
 
+
+
 ## 3.10 Define Conformance Requirements
 
 ## 3.11 Review, Approval, and Publication
@@ -609,12 +611,6 @@ to codify and document TC acceptance of content developed to-date.
 -------
 
 # Appendix A. Informative References
-
- * OpenC2 Architecture
- * OpenC2 Language Spec
- * JADN Spec
- * Information Modeling with JADN CN
- * OASIS Work Product Process Documentation
 
 <!-- Required section -->
 
