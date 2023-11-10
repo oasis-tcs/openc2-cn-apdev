@@ -117,6 +117,7 @@ For complete copyright information please see the full Notices section in an App
 - [Appendix A. Informative References](#appendix-a-informative-references)
           - [\[IM-JADN-v1.0\]](#im-jadn-v10)
           - [\[JADN-v1.0\]](#jadn-v10)
+          - [\[OASIS-Conformance\]](#oasis-conformance)
           - [\[OASIS-Names\]](#oasis-names)
           - [\[OASIS-TC-Proc\]](#oasis-tc-proc)
           - [\[OpenC2-Arch-v1.0\]](#openc2-arch-v10)
@@ -613,8 +614,26 @@ are consistent with the final schema.
 
 ## 3.10 Define Conformance Requirements
 
+All OASIS specifications require a conformance section, consisting of
+[conformance
+clauses](https://www.oasis-open.org/policies-guidelines/oasis-defined-terms-2018-05-22/#dConformanceClause).
+The editor of the profile must determine how to organize the conformance
+clauses, which are a logical extension of the conformance clauses contained in
+[[OpenC2-Lang-v1.0](#openc2-lang-v10)]. 
+
+OASIS has published guidance on developing conformance requirements
+[[OASIS-Conformance](#oasis-conformance)]. 
+
+A primary concern for the editor of a profile is to define logical groupings of
+conformance clauses against the requirements of the profile to form "conformance
+targets", which can serve to organize and simplify the conformance section of
+the specification.
+
 ## 3.11 Review, Approval, and Publication
 
+When the Actuator Profile specification is deemed complete, its approval is
+governed by the [[OASIS TC Process](#oasis-tc-proc)] requirements for public
+review and approval of a Committee Specification. The OpenC2 TC has documented its approach to [handling public review comments](https://github.com/oasis-tcs/openc2-tc-ops/blob/main/Documentation-Norms.md#45-public-review-comment-handling) and [publishing the approved Committee Specification](https://github.com/oasis-tcs/openc2-tc-ops/blob/main/Documentation-Norms.md#46-cs-approval--publication). 
 
 -------
 
@@ -645,6 +664,10 @@ _JSON Abstract Data Notation Version 1.0_. Edited by David Kemp. 17 August 2021.
 OASIS Committee Specification 01.
 https://docs.oasis-open.org/openc2/jadn/v1.0/cs01/jadn-v1.0-cs01.html. Latest
 stage: https://docs.oasis-open.org/openc2/jadn/v1.0/jadn-v1.0.html.
+
+###### [OASIS-Conformance]
+_Guidelines to Writing Conformance Clauses for OASIS Specifications_, 01 April 2018,
+https://docs.oasis-open.org/templates/TCHandbook/ConformanceGuidelines.html
 
 ###### [OASIS-Names]
 _OASIS Naming Directives_, 13 February 2020,
