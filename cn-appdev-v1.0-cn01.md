@@ -541,13 +541,43 @@ Procedures:
  ([[OASIS-TC-Proc](#oasis-tc-proc)], Section 2.2.5).
 
  All JADN files that are part of the schema must be named in accordance with
- OASIS naming conventions ([OASIS-Names](#oasis-names)), listed in Annex A of
- the AP specification, and included in the package of files for the AP when
- submitted to OASIS for approval or publication.
+ OASIS naming conventions ([OASIS-Names](#oasis-names)), identified in the front
+ matter under Additional Artifacts and Declared JADN Namespaces, listed in
+ Annex A of the AP specification, and included in the package of files for the
+ AP when submitted to OASIS for approval or publication.
+
+ The OpenC2 convention for APs is to identify the JADN schema (i.e., the JSON
+ data representation in a separate file) as the normative schema, and present
+ the JIDL version in an Appendix to provide a readily human-readable
+ presentaiton of the schema in the AP specification document.
 
 ## 3.6 Create Property Tables
 
-## 3.7 Develop Specification Text
+To create readable, structured documentation of the types defined for the
+profile, the JADN schema is processed via automated tooling to create a property
+tables representation. These tables are integrated into Sections 2.1 and 2.2 of
+the AP document to identify the various data structures and types used in the
+profile. As described in section 3.1.4 of
+[[OpenC2-Lang-v1.0](#openc2-lang-v10)], the specification of extensions in an AP
+to fit the needs of a particular cyberdefense function are anticipated and
+supported by the OpenC2 language. These extensions are defined in the profile's
+JADN schema and documented in the specification using property tables.
+
+The fields of a property table vary with the needs of the data type being
+described but will include an appropriate subset of the following:
+
+ * **ID:** an integer identifier for a field in a compound type
+ * **Name:** the name of the type or field being defined
+ * **Type:** the data type for the type or field being defined
+ * **#:** a field to define the cardinality requirements of type or field being
+   defined
+ * **Description:** a description of the purpose of the type or field being
+   defined
+
+All of these fields are normative except for the `Description` field and their
+meanings are as defined in the [[JADN-v1.0](#jadn-v10)] specification.
+
+## 3.7 Develop Specification Text 
 
 ## 3.8 Iterate To Completion
 
