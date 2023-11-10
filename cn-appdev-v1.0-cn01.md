@@ -109,12 +109,11 @@ For complete copyright information please see the full Notices section in an App
   - [3.4 Develop JADN Schema](#34-develop-jadn-schema)
   - [3.5 Link JADN Schema](#35-link-jadn-schema)
   - [3.6 Create Property Tables](#36-create-property-tables)
-  - [3.7 Insert Property Tables](#37-insert-property-tables)
-  - [3.8 Develop Specification Text](#38-develop-specification-text)
-  - [3.9 Interate To Completion](#39-interate-to-completion)
-  - [3.10 Develop Final Example Messages from JADN Schema](#310-develop-final-example-messages-from-jadn-schema)
-  - [3.11 Define Conformance Requirements](#311-define-conformance-requirements)
-  - [3.12 Review, Approval, and Publication](#312-review-approval-and-publication)
+  - [3.7 Develop Specification Text](#37-develop-specification-text)
+  - [3.8 Iterate To Completion](#38-iterate-to-completion)
+  - [3.9 Develop Final Example Messages from JADN Schema](#39-develop-final-example-messages-from-jadn-schema)
+  - [3.10 Define Conformance Requirements](#310-define-conformance-requirements)
+  - [3.11 Review, Approval, and Publication](#311-review-approval-and-publication)
 - [Appendix A. Informative References](#appendix-a-informative-references)
           - [\[IM-JADN-v1.0\]](#im-jadn-v10)
           - [\[JADN-v1.0\]](#jadn-v10)
@@ -548,17 +547,15 @@ Procedures:
 
 ## 3.6 Create Property Tables
 
-## 3.7 Insert Property Tables
+## 3.7 Develop Specification Text
 
-## 3.8 Develop Specification Text
+## 3.8 Iterate To Completion
 
-## 3.9 Interate To Completion
+## 3.9 Develop Final Example Messages from JADN Schema
 
-## 3.10 Develop Final Example Messages from JADN Schema
+## 3.10 Define Conformance Requirements
 
-## 3.11 Define Conformance Requirements
-
-## 3.12 Review, Approval, and Publication
+## 3.11 Review, Approval, and Publication
 
 
 -------
