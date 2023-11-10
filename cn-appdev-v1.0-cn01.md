@@ -579,6 +579,15 @@ meanings are as defined in the [[JADN-v1.0](#jadn-v10)] specification.
 
 ## 3.7 Develop Specification Text 
 
+Descriptive text is needed to complement the JADN schema and property tables.
+The text should provide details (e.g., usage requirements) regarding the
+extensions defined in the AP. Section 2.3.x should walk through the commands
+defined in the profile, describing the expected processing associated with each
+command and any specific requirements associated with Responses to particular
+commands. This content is typically organized to present each OpenC2 Action
+included in the profile and discuss the handling of each valid target for that
+action.
+
 ## 3.8 Iterate To Completion
 
 ## 3.9 Develop Final Example Messages from JADN Schema
