@@ -373,8 +373,11 @@ toward completion and its execution does not need to be strictly linear.
     D) **Link JADN Schema:**  Link to the JADN schema file(s) from Annex A.
 
     E) **Create Property Tables:** Use JADN tooling to generate property tables
-       from the JADN schema. Add the property tables for the schema to the body
-       of the AP specification, and develop corresponding text content.
+       from the JADN schema. 
+
+    F) **Insert Property Tables and Associated Text:** Add the property tables
+       for the schema to the body of the AP specification, and develop
+       corresponding text content.
 
  3. **Interate To Completion:** As the AP matures the initial use case(s) can be
     refined and additional use cases can be defined and integrated as described
